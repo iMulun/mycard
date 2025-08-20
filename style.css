@@ -1,62 +1,56 @@
-/* Usamos variáveis CSS (--cor-principal, etc.) para facilitar a customização futura.
-   Se quiser mudar uma cor, só precisa alterar em um lugar. */
 :root {
-  --cor-fundo-inicio: #2c3e50; /* Azul escuro */
-  --cor-fundo-fim: #4ca1af;    /* Azul esverdeado */
+  --cor-fundo-inicio: #2c3e50;
+  --cor-fundo-fim: #4ca1af;
   --cor-card: #ffffff;
   --cor-sombra: rgba(0, 0, 0, 0.2);
   --cor-borda-foto: #4ca1af;
   --cor-texto-principal: #333;
   --cor-texto-secundario: #555;
-  --cor-fundo-frase: #f0f4f8; /* Cinza azulado claro */
+  --cor-fundo-frase: #f0f4f8;
   --cor-botao-inicio: #4ca1af;
   --cor-botao-fim: #2c3e50;
   --cor-texto-botao: #ffffff;
 }
 
 body {
-  /* Trocamos o gradiente rosa por um gradiente de azul sóbrio e moderno. */
   background: linear-gradient(135deg, var(--cor-fundo-inicio), var(--cor-fundo-fim));
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  /* Alteramos a fonte para 'Montserrat', que tem um visual mais moderno e limpo. */
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
 .card {
   background: var(--cor-card);
-  padding: 25px; /* Um pouco mais de respiro interno */
-  border-radius: 15px; /* Bordas um pouco menos arredondadas para um look mais sério */
+  padding: 25px;
+  border-radius: 15px;
   box-shadow: 0 10px 30px var(--cor-sombra);
   text-align: center;
   width: 320px;
-  /* A transição foi movida para o seletor principal para abranger todas as propriedades. */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: fadeIn 0.8s ease-in-out;
 }
 
 .card:hover {
-  transform: translateY(-8px); /* Efeito de elevação um pouco mais pronunciado */
-  box-shadow: 0 15px 35px var(--cor-sombra); /* Sombra mais forte no hover */
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px var(--cor-sombra);
 }
 
 .foto {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  /* Borda com a nova cor de destaque e um pouco mais sutil. */
   border: 4px solid var(--cor-borda-foto);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  object-fit: cover; /* Garante que a imagem não fique distorcida */
-  margin-bottom: 15px; /* Espaçamento inferior para separar do texto */
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
 .frase {
   font-style: italic;
-  font-size: 0.9em; /* Tamanho um pouco menor para ser mais discreto */
+  font-size: 0.9em;
   color: var(--cor-texto-secundario);
   margin-top: 8px;
   background: var(--cor-fundo-frase);
@@ -66,32 +60,29 @@ body {
 }
 
 .links {
-    margin-top: 20px; /* Adiciona um espaço acima dos links */
+    margin-top: 20px;
 }
 
 .links a {
-  display: block; /* Faz os links ocuparem a largura toda, empilhando-os */
-  margin: 10px 0; /* Ajusta a margem para o layout em bloco */
+  display: block;
+  margin: 10px 0;
   padding: 12px 20px;
-  /* Gradiente com as novas cores */
   background: linear-gradient(135deg, var(--cor-botao-inicio), var(--cor-botao-fim));
   color: var(--cor-texto-botao);
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: bold;
-  text-transform: uppercase; /* Deixa o texto dos botões em maiúsculas */
-  letter-spacing: 1px; /* Espaçamento entre letras para um visual mais refinado */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .links a:hover {
-  /* Invertemos o gradiente no hover para um efeito dinâmico */
   background: linear-gradient(135deg, var(--cor-botao-fim), var(--cor-botao-inicio));
-  transform: scale(1.03); /* Efeito de escala um pouco mais sutil */
+  transform: scale(1.03);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-/* Sua animação já estava ótima, mantive ela! */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
