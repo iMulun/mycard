@@ -10,3 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Hey haha, this is my picture 🤫")
       });
   });
+
+window.onload = function() {
+  alert("Attention! This site is still in the testing phase.");
+};
